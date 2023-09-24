@@ -16,8 +16,8 @@ const imagesButtonLink: {
   [key: string]: string;
 } = {
   wa: "/img_link_zap_original.png",
-  in: "/img_link_behance_original.png",
-  be: "/img_link_instagram_original.png",
+  in: "/img_link_instagram_original.png",
+  be: "/img_link_behance_original.png",
 };
 
 function App() {
@@ -54,19 +54,22 @@ function App() {
 
           <span className="text-subtitle">LINKS ÚTEIS</span>
         </div>
-          <TransitionGroup className="links-images-container">
-            {visibleLinks.map((key, index) => (
-              <CSSTransition key={key} timeout={500} classNames="fade">
-                <LinkButton
-                  key={key + index}
-                  link={linksButton[key]}
-                  image={imagesButtonLink[key]}
-                  alt={key}
-                />
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
+        <TransitionGroup className="links-images-container">
+          {visibleLinks.map((key, index) => (
+            <CSSTransition key={key} timeout={500} classNames="fade">
+              <LinkButton
+                key={key + index}
+                link={linksButton[key]}
+                image={imagesButtonLink[key]}
+                alt={key}
+              />
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
+        <div className="footer-container-div">
+          <a href="">Anzo Designer &copy; Copyright 2023 </a>
         </div>
+      </div>
     </>
   );
 }
